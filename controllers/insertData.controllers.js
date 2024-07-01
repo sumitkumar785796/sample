@@ -12,3 +12,12 @@ exports.Insert = async (req, res) => {
         return res.status(500).json({ message: 'Internal Server Error', data: error })
     }
 }
+exports.Views = async (req,res)=>{
+    try {
+        const view = await Data.find()
+        res.status(200).json({message:'View All Data',data:view})
+    } catch (error) {
+        res.status(500).json({message:'Internal Server Error',data:error})
+        
+    }
+}

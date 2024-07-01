@@ -1,5 +1,7 @@
 const express = require('express')
 const controllers = require('../controllers/insertData.controllers')
 const routes = express.Router()
-routes.route('/insert').post(controllers.Insert)
-module.exports=routes
+routes.route('/data')
+    .post(controllers.Insert)
+    .get(controllers.Views)
+module.exports = routes
